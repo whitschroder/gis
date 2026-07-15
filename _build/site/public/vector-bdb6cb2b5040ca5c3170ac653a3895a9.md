@@ -1,0 +1,49 @@
+# Editing Vector Data
+
+Vector data in the form of a shapefile or feature class can be edited in GIS software.
+
+## Editing in ArcGIS Pro
+
+Vector data can be edited in ArcGIS Pro under the Edit toolbar. To edit a vector layer, click Edit -> Create Features. In the Create Features pane select the feature class you want to edit. For point data, the options are straightforward. For example, under your layer in the Create Features pane, click Point. Then click anywhere in the map to place your point. For lines, you can click Line to draw a simple line or explore the other options to draw right angles, arcs, etc. Polygons have similar options.
+
+```{image} /images/edit.jpg
+:alt: Edit
+:class: bg-primary mb-1
+:width: 80%
+:align: center
+```
+
+Once a feature has been placed, you must save your edits or discard them. These options are available under the Edit toolbar. Note that the button to save edits is not the same as the button to save the project. If you exit out of your project with unsaved edits, the program will prompt you to save or discard them, but it is best practice to save often.
+
+```{image} /images/saveedit.jpg
+:alt: Save Edits
+:class: bg-primary mb-1
+:width: 80%
+:align: center
+```
+
+To create a new, empty vector layer, navigate to the Catalog pane, choose a folder and right-click to select New -> Shapefile, or if working in a geodatabase, New -> Feature Class. You will be presented with additional parameters, including assigning a Feature Class Name, Geometry Type, and a Coordinate System. The new shapefile will be automatically added to Contents, which can then be edited like any other vector layer.
+
+```{image} /images/newfeature.jpg
+:alt: New Feature
+:class: bg-primary mb-1
+:width: 80%
+:align: center
+```
+
+Snapping can be turned on or off under the Edit toolbar. When on, your cursor will snap to another feature when nearby.
+
+Additional tools are available under the Editor Tool Gallery.
+
+```{image} /images/toolgallery.jpg
+:alt: Tool Gallery
+:class: bg-primary mb-1
+:width: 80%
+:align: center
+```
+
+Additional information on editing feature classes is available [here](https://pro.arcgis.com/en/pro-app/latest/help/editing/a-quick-tour-of-editing.htm).
+
+## Editing in QGIS
+
+Editing shapefiles in QGIS is similar to ArcGIS Pro. More information is available [here](https://docs.qgis.org/3.34/en/docs/user_manual/working_with_vector/editing_geometry_attributes.html).

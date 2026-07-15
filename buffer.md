@@ -1,0 +1,72 @@
+# Buffers and Minimum Bounding Geometry
+
+When working with archaeological data, we might want to define the space surrounding archaeological features or sites, or create a buffer for site management.
+
+## The Buffer Tool
+
+In ArcGIS Pro, the [Buffer tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/analysis/buffer.htm) takes as input a feature class (point, polyline, or polygon) and creates a specified buffer around the features. Users can define the Euclidean distance of the buffers, as well as specify whether overlapping buffers will form separate records or be dissolved into each other using the Dissolve Type option. The polygon can also be included or excluded from the buffer. The equivalent tool in QGIS is Buffer under [Vector geometry](https://docs.qgis.org/3.44/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html). Note that in QGIS, the units of the buffer distance will match the units of the data's coordinate reference system. As such, data should usually be reprojected to a planar projection prior to running the buffer tools.
+
+```{image} /images/buffertool.jpg
+:alt: Buffer Tool
+:class: bg-primary mb-1
+:width: 80%
+:align: center
+```
+
+The following shows a 10 km buffer around Alachua county:
+
+```{image} /images/alachuabuffer.jpg
+:alt: Alachua Buffer
+:class: bg-primary mb-1
+:width: 80%
+:align: center
+```
+
+A similar tool, the [Multiple Ring Buffer tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/analysis/multiple-ring-buffer.htm) will create multiple buffers based on a set of distance values defined by the user. These rings can have an equal interval or any values as needed for the particular application. The ring buffers can be non-overlapping (rings) or they can by overlapping (each subsequent buffer will include the previous one). In QGIS, refer to the Multi-ring buffer (constant distance) tool under [Vector geometry](https://docs.qgis.org/3.44/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html). The following creates multiple ring buffers around Alachua county at distances of 10 km, 50 km, and 100 km.
+
+```{image} /images/mrb.jpg
+:alt: Multiple Ring Buffer
+:class: bg-primary mb-1
+:width: 80%
+:align: center
+```
+
+<br>
+
+```{image} /images/alachuamrb.jpg
+:alt: Alachua Multiple Ring Buffer
+:class: bg-primary mb-1
+:width: 80%
+:align: center
+```
+
+## Minimum Bounding Geometry
+
+The [Minimum Bounding Geometry tool](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/data-management/minimum-bounding-geometry.htm) takes a feature class input (point, polyline, or polygon) and creates a new polygon feature class surrounding and fully containing these features. Options for the bounding geometry include rectangular and circular extents, as well as the convex hull option, which connects the outermost records in the feature class to create the smallest bounding polygon. In QGIS, the equivalent tool is Minimum bounding geometry under [Vector geometry](https://docs.qgis.org/3.44/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html).
+
+The following shows multiple rectangles around selected Florida counties:
+
+```{image} /images/multiplerectangle.jpg
+:alt: Multiple Rectangle
+:class: bg-primary mb-1
+:width: 80%
+:align: center
+```
+
+The following shows all selected counties grouped together to create a single bounding rectangle:
+
+```{image} /images/singleboundingrectangle.jpg
+:alt: Multiple Rectangle
+:class: bg-primary mb-1
+:width: 80%
+:align: center
+```
+
+The following shows the convex hull option:
+
+```{image} /images/convexhull.jpg
+:alt: Convex Hull
+:class: bg-primary mb-1
+:width: 80%
+:align: center
+```

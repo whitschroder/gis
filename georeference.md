@@ -1,0 +1,30 @@
+# Georeferencing
+
+Any imagery can be added to ArcGIS Pro through the Add Data option. However, imagery that do not have any spatial reference will be placed randomly in the map frame. Adding a spatial reference to imagery is called Georeferencing. Examples of imagery that can be georeferenced are maps produced outside of GIS (including sketch maps, historical maps, etc.) or aerial imagery.
+
+## Georeferencing in ArcGIS Pro
+
+To georeferenced imagery in ArcGIS Pro, select the relevant raster layer in Contents and click Imagery -> Georeference.
+
+```{image} /images/georeferencetab.jpg
+:alt: Georeference
+:class: bg-primary mb-1
+:width: 80%
+:align: center
+```
+
+The simplest georeferencing tools are available under Georeference -> Prepare. Fit to Display will relocate the imagery to the current viewing extent of the map frame. Move, Scale, and Rotate will adjust the extent and orientation of the imagery.
+
+More precise tools are available under Georeference -> Adjust. Add Control Points involves selecting a point on the imagery followed by selecting the spatial location of that point on the map frame. To delete a control point, click Georeference -> Review -> Control Point Table, select the record and click Delete Selected. 
+
+At least 3 control points should be positioned. Under Georeference -> Adjust -> Transformation, you can select the transformation used to stretch or drape the imagery. Polynomials are the simplest transformation, but with at least 10 points you can select the Spline transformation, which will be the most accurate and lead to less overall error. The Auto Apply button will update the map on the fly. The imagery can be turned off and on in Contents to assist with the georeferencing, or under Raster Layer -> Transparency, you can make the layer transparent.
+
+Once satisfied with the edits, click Georeference -> Save or Georeference -> Save as New (the latter to save a new file rather than overriding the original. Note that this save button differs from the Save Project button at the top left. Then click Close Georeference.
+
+Additional instructions are available at [Georeferencing Tools](https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/georeferencing-tools.htm).
+
+## Georeferencing in QGIS
+
+The workflow to georeference imagery in QGIS is similar. Instructions are available at the [Georeferencer](https://docs.qgis.org/3.34/en/docs/user_manual/working_with_raster/georeferencer.html).
+
+

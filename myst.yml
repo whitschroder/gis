@@ -1,0 +1,66 @@
+version: 1
+project:
+  id: 332e43df-56b4-4245-9900-e00623b21e1c
+  title: Applying GIS in Archaeological Research
+  # description:
+  keywords: 
+      - GIS
+      - archaeology
+  github: whitschroder/gis
+  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+  toc:
+    - file: intro.md
+    - file: install.md
+    - file: data.md
+    - file: lab1.md
+      children:
+        - file: load.md
+        - file: layout.md
+    - file: lab2.md
+      children:
+        - file: coord.md
+        - file: tables.md
+        - file: vector.md
+        - file: georeference.md
+    - file: lab3.md
+      children:
+        - file: select.md
+        - file: buffer.md
+        - file: clip.md
+        - file: join.md
+        - file: sum.md
+    - file: lab4.md
+      children: 
+        - file: raster.md
+        - file: resample.md
+        - file: terrain.md
+        - file: arcscene.md
+        - file: interpolation.md
+    - file: lab5.md
+      children:
+        - file: conversion.md
+        - file: reclass.md
+        - file: euclidean.md
+        - file: cell.md
+        - file: zonal.md
+    - file: lab6.md
+      children:
+        - file: viewshed.md
+        - file: geoviewshed.md
+    - file: lab7.md
+      children:
+        - file: hydro.md
+        - file: morehydro.md
+        - file: quality.md
+    - file: lab8.md
+      children:
+        - file: distance.md
+        - file: friction.md
+    - file: lab9.md
+site:
+  parts:
+    footer: footer1.md
+    primary_sidebar_footer: footer.md
+  options:
+    logo: logo.png
+  template: book-theme
