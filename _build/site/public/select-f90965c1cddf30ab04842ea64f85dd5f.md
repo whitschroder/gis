@@ -1,21 +1,10 @@
 # Selecting Layers
 
-We have seen previously that vector elements and records can easily be selected in ArcGIS Pro with the Select button available under Edit -> Selection by clicking the element on the map frame or by selecting the row in the feature class's attribute table. 
-
-```{note}
-In QGIS, similar options are available in the Selection Toolbar, including Select Features by Area or Single Click. 
-```
-
-Multiple records can be selected in this manner by holding the shift key, and records can be unselected by holding the control or command keys. This approach generally suffices when selecting single or few records, but when needing to select several dozen records, tools are available to automate such tasks.
-
+We have seen previously that vector elements and records can easily be selected in ArcGIS Pro with the Select button available under Edit -> Selection by clicking the element on the map frame or by selecting the row in the feature class's attribute table. In QGIS, similar options are available in the Selection Toolbar, including Select Features by Area or Single Click. Multiple records can be selected in this manner by holding the shift key, and records can be unselected by holding the control or command keys. This approach generally suffices when selecting single or few records, but when needing to select several dozen records, tools are available to automate such tasks.
 
 ## Select Layer By Attribute
 
-At times, we want to select records based on a specific attribute or field that they share. For example, we might want to select all counties in New York or all tools that are bifaces. A simple way to select such records is to reorder the relevant column in the attribute table, which in ArcGIS Pro can be done by right-clicking the column or field name in the attribute table, and clicking the option to sort in ascending or descending order (for text, this will sort from A to Z or Z to A, respectively, and for integer or float values, this will order the data numerically). Once ordered, you can scroll down to the desired entry and select all rows with that same data (they should all be adjacent to each other at this point). 
-
-```{note}
-In QGIS, simply click on the column header in the attribute table once to sort in ascending order and a second time to sort in descending order.
-```
+At times, we want to select records based on a specific attribute or field that they share. For example, we might want to select all counties in New York or all tools that are bifaces. A simple way to select such records is to reorder the relevant column in the attribute table, which in ArcGIS Pro can be done by right-clicking the column or field name in the attribute table, and clicking the option to sort in ascending or descending order (for text, this will sort from A to Z or Z to A, respectively, and for integer or float values, this will order the data numerically). Once ordered, you can scroll down to the desired entry and select all rows with that same data (they should all be adjacent to each other at this point). In QGIS, simply click on the column header in the attribute table once to sort in ascending order and a second time to sort in descending order.
 
 Another method is to use the [Select Layer by Attribute tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/select-layer-by-attribute.htm) in ArcGIS Pro. This tool takes a feature class or table as input and an expression or set of expressions to define desired attributes to be selected. This tool does not modify the feature class but instead generates a temporary layer that can be used in subsequent analyses until a new selection is prompted or the Clear Selection option is clicked. The expression format typically involves defining where a specific field has a specific value, or numeric values above or below a specific value. The layer that is generated can be a new selection, added to an existing selection, or inverted to a new selection where the opposite of the expression is true. Several expressions can be combined using the options and/or. Once the tool is run, the relevant records will be highlighted in the attribute table and in the map frame. 
 
