@@ -31,7 +31,6 @@ On a Mac, you will need to install GRASS separately [here](https://grass.osgeo.o
 To activate GRASS in QGIS, go to Settings -> Options, click on System, and under Environment, check the box next to Use custom variables. Click the plus sign to add variables. You will need to add the following three variables:
 
 | Apply | Variable | Value |
-| --- | --- | --- |
 | Prepend | GRASS_PREFIX | /Applications/GRASS-8.4.app/Contents/Resources |
 | Prepend | GISBASE | /Applications/GRASS-8.4.app/Contents/Resources |
 | Prepend | PROJ_NETWORK | ON |
