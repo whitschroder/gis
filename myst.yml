@@ -56,7 +56,7 @@ project:
       children:
         - file: distance.md
         - file: friction.md
-    - file: lab9.md
+    - file: automation.md
 site:
   parts:
     footer: footer1.md
