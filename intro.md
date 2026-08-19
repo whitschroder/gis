@@ -10,14 +10,6 @@ Turlington B129
 (352) 294-6396  
 <wschroder@ufl.edu>
 
-**Instructor Office Hours**  
-Tuesdays and Thursdays 9:30 am–10:30 am    
-
-**Class Meetings**  
-Tuesday, Period 4, 10:40–11:30 am  
-Thursday, Periods 4–5, 10:40 am–12:35 pm  
-Turlington B357
-
 **Prerequisites**
 ANT 2140
 
