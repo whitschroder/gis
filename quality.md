@@ -39,13 +39,31 @@ We begin by creating a new polyline feature class and drawing the section of riv
 :align: center
 ```
 
-We can now run the [Generate Points Along Lines tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/generate-points-along-lines.htm) in ArcGIS Pro or Points along geometry in QGIS or Points Along Lines in Whitebox Workflows to create sample points. After selecting Point Placement By Distance, we want to define a distance that is the same or lower than the cell size of the DEM, and include end points.
+We can now run the [Generate Points Along Lines tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/generate-points-along-lines.htm) in ArcGIS Pro to create sample points.
 
-We then run the [Extract Values to Points tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/extract-values-to-points.htm) in ArcGIS Pro or Sample Raster Values in QGIS to add a field in the point attribute table that includes the elevation taken from the DEM. The input point features are the points generating along the polyline, and the input raster is the DEM we want to modify.
+```{note}
+Or use Points along geometry in QGIS or Points Along Lines in Whitebox Workflows.
+```
+
+After selecting Point Placement By Distance, we want to define a distance that is the same or lower than the cell size of the DEM, and include end points.
+
+We then run the [Extract Values to Points tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/extract-values-to-points.htm) in ArcGIS Pro to add a field in the point attribute table that includes the elevation extracted from the DEM.
+
+```{note}
+Or use Sample Raster Values in QGIS.
+```
+
+The input point features are the points generated along the polyline, and the input raster is the DEM we want to modify.
 
 The points should automatically be in descending order by the RASTERVALU field. Review the values: they should clearly descend from a maximum to a minimum. If any values between are higher than they should be, manually edit them so that all values descend from maximum to minimum.
 
-Now run the [Point to Raster tool](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/conversion/point-to-raster.htm) in ArcGIS Pro or Rasterize in QGIS on the point feature class with the corrected elevation values, with the cell size and snapping set to the original, unmodified DEM. Use [Cell Statistics](https://pro.arcgis.com/en/pro-app/3.3/tool-reference/spatial-analyst/cell-statistics.htm) set to minimum to combine the original, unmodified DEM with the interpolated values along the river (ensure that under Environments, the cell size, snapping, and processing extent are all set to the unmodified DEM input). The output will be a modified DEM with the river burned into the canyon (note that running Focal Statistics set to minimum before running Cell Statistics will widen the river if necessary):
+Now run the [Point to Raster tool](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/conversion/point-to-raster.htm) in ArcGIS Pro on the point feature class with the corrected elevation values, with the cell size and snapping set to the original, unmodified DEM.
+
+```{note}
+Or use Rasterize in QGIS.
+```
+
+Use [Cell Statistics](https://pro.arcgis.com/en/pro-app/3.3/tool-reference/spatial-analyst/cell-statistics.htm) set to minimum to combine the original, unmodified DEM with the interpolated values along the river (ensure that under Environments, the cell size, snapping, and processing extent are all set to the unmodified DEM input). The output will be a modified DEM with the river burned into the canyon (note that running Focal Statistics set to minimum before running Cell Statistics will widen the river if necessary):
 
 ```{image} /images/burned.jpg
 :alt: Burned DEM
@@ -54,7 +72,9 @@ Now run the [Point to Raster tool](https://pro.arcgis.com/en/pro-app/3.4/tool-re
 :align: center
 ```
 
+```{note}
 A more automatic approach in QGIS is to use the Burn Stream Network into DEM tool in SAGA or the Burn Streams tool  in Whitebox Workflows.
+```
 
 Running the hydrology workflow on the resulting burned DEM should lead to improved results:
 

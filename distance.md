@@ -56,7 +56,13 @@ Note that all cells should be set to a value of 1, so you may need to add a fiel
 :align: center
 ```
 
-The resulting surface shows a dendritic network of paths. We can create more of a spider web network, which more accurately represents the shortest Euclidean distances from each point to the destination; for example, we can input our distance raster into the [Least Cost Path tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/intelligence/least-cost-path.htm) in ArcGIS Pro or r.cost under GRASS in QGIS. We input the Euclidean distance raster as the input cost surface, and we define the starting and ending points. For best results, use a single start point with travel to ending points that can represent one or many places:
+The resulting surface shows a dendritic network of paths. We can create more of a spider web network, which more accurately represents the shortest Euclidean distances from each point to the destination; for example, we can input our distance raster into the [Least Cost Path tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/intelligence/least-cost-path.htm) in ArcGIS Pro 
+
+```{note}
+Or use r.cost under GRASS in QGIS. 
+```
+
+We input the Euclidean distance raster as the input cost surface, and we define the starting and ending points. For best results, use a single start point with travel to ending points that can represent one or many places:
 
 ```{image} /images/leastpn.jpg
 :alt: Least PN
@@ -65,4 +71,6 @@ The resulting surface shows a dendritic network of paths. We can create more of 
 :align: center
 ``` 
 
+```{note}
 For an additional option in QGIS, install Least-Cost Path under Plugins -> Manage and Install Plugins. This plugin will add a Least Cost Path tool under Cost Distance Analysis in the Processing Toolbox.
+```

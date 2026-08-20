@@ -21,7 +21,9 @@ In this operation, the flow accumulation raster values below 3500 are set to NoD
 :align: center
 ```
 
+```{note}
 In QGIS, refer to the stream order tools in Whitebox Workflows, namely Strahler Stream Order, Shreve Stream Magnitude, or Horton Stream Order.
+```
 
 ## Basin
 
@@ -34,7 +36,9 @@ The [Basin tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial
 :align: center
 ```
 
+```{note}
 A similar tool, Basins, is available in QGIS under Whitebox Workflows.
+```
 
 ## Watershed
 
@@ -49,6 +53,8 @@ The output watershed can be visualized by changing the symbology to a graduated 
 :align: center
 ```
 
+```{note}
 Similar tools are available in QGIS under Whitebox Workflows, including Watershed and Watershed from Raster Pour Points. If using raster pour points, run Snap Pour Points first.
 
 QGIS also offers several other hydrology tools within Whitebox Workflows, GRASS, and SAGA that are worth exploring further.
+```

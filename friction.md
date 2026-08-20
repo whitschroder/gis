@@ -4,7 +4,11 @@ To set parameters for a least cost path model, we have to create a friction surf
 
 ## Incorporating Slope
 
-A simple friction surface would incorporate slope. We can simply run the [Least Cost Path tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/intelligence/least-cost-path.htm) in ArcGIS Pro, r.cost tool in GRASS, or Least Cost Path tool in QGIS with a slope surface rather than a Euclidean distance surface:
+A simple friction surface would incorporate slope. We can simply run the [Least Cost Path tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/intelligence/least-cost-path.htm) in ArcGIS Pro with a slope surface rather than a Euclidean distance surface. 
+
+```{note}
+In QGIS, use the r.cost tool in GRASS or the Least Cost Path tool in QGIS plugins.
+```
 
 ```{image} /images/slopepath.jpg
 :alt: Slope Path
