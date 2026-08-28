@@ -155,24 +155,6 @@ Additional settings can be changed under Analysis -> Environments. Here, you sho
 :align: center
 ```
 
-## Projections and Transformations in ArcGIS Pro
-
-To identify the coordinate system of data in ArcGIS Pro, add the data and right-click the layer's Properties under Contents. Click Source -> Spatial Reference. The name and type of projection will be displayed at the top, along with an EPSG number. EPSG numbers are convenient shorthand for coordinate systems, and additional information is available at <https://epsg.io>. 
-
-Data can be reprojected into any coordinate system using a default transformation. The [Project tool](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/data-management/project.htm) can be used to change the coordinate system of a feature class. For rasters, the [Project Raster tool](https://pro.arcgis.com/en/pro-app/3.3/tool-reference/data-management/project-raster.htm) should be used.
-
-Occasionally, you will add data with an unknown coordinate system. If this happens, you can use the [Define Projection tool](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/data-management/define-projection.htm) to set the coordinate system. If you do not know the appropriate coordinate system, you might be able to infer it by looking at the extent of the data under the layer's Properties under Contents, Source -> Extent.
-
-## Zooming to a Specific Location or Coordinate in ArcGIS Pro
-
-A tool to find a known location is available under Map -> Inquiry -> Locate. Typing a location in the search bar will zoom to this location.
-
-A tool to find a specific coordinate is available under Map -> Navigate -> Go To XY. In the search bar that pops up, choose your coordinate system (e.g., Decimal Degrees or UTM). To find Gainesville in Decimal Degrees, type 82.343771 29.649077, being mindful of which is longitude, which is latitude, and the appropriate direction (N, E, W, or S). Note that values must be positive. For UTM, type 17N 369936.71 3280655.83 or 17R 369936.71 3280655.83. Press Enter to flash or add a marker to the map.
-
-```{note}
-Coordinate systems in QGIS are discussed in more detail below.
-```
-
 ## Commonly-Used Projections in ArcGIS Pro
 
 Anytime the output coordinate system is defined in Environments (by clicking on the sphere icon), you will see a window similar to the following:
@@ -205,6 +187,24 @@ Vertical coordinate systems are divided into Ellipsoidal and Gravity (geoid) mod
 * Ellipsoidal-based -> World -> WGS 1984
 * Gravity-related -> World -> EGM96 height
 * Gravity-related -> World -> EGM2008 height
+
+## Projections and Transformations in ArcGIS Pro
+
+To identify the coordinate system of data in ArcGIS Pro, add the data and right-click the layer's Properties under Contents. Click Source -> Spatial Reference. The name and type of projection will be displayed at the top, along with an EPSG number. EPSG numbers are convenient shorthand for coordinate systems, and additional information is available at <https://epsg.io>. 
+
+Data can be reprojected into any coordinate system using a default transformation. The [Project tool](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/data-management/project.htm) can be used to change the coordinate system of a feature class. For rasters, the [Project Raster tool](https://pro.arcgis.com/en/pro-app/3.3/tool-reference/data-management/project-raster.htm) should be used.
+
+Occasionally, you will add data with an unknown coordinate system. If this happens, you can use the [Define Projection tool](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/data-management/define-projection.htm) to set the coordinate system. If you do not know the appropriate coordinate system, you might be able to infer it by looking at the extent of the data under the layer's Properties under Contents, Source -> Extent.
+
+## Zooming to a Specific Location or Coordinate in ArcGIS Pro
+
+A tool to find a known location is available under Map -> Inquiry -> Locate. Typing a location in the search bar will zoom to this location.
+
+A tool to find a specific coordinate is available under Map -> Navigate -> Go To XY. In the search bar that pops up, choose your coordinate system (e.g., Decimal Degrees or UTM). To find Gainesville in Decimal Degrees, type 82.343771 29.649077, being mindful of which is longitude, which is latitude, and the appropriate direction (N, E, W, or S). Note that values must be positive. For UTM, type 17N 369936.71 3280655.83 or 17R 369936.71 3280655.83. Press Enter to flash or add a marker to the map.
+
+```{note}
+Coordinate systems in QGIS are discussed in more detail below.
+```
 
 ## Coordinate Systems in QGIS
 
