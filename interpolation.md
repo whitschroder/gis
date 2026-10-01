@@ -22,6 +22,10 @@ The [Kernel Density tool](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/s
 In QGIS, the Heatmap (Kernel Density Estimation) tool is available under [Interpolation](https://docs.qgis.org/3.44/en/docs/user_manual/processing_algs/qgis/interpolation.html).
 ```
 
+## Triangular Irregular Network (TIN)
+
+A Triangular Irregular Network (TIN) is a vector-based surface made up of a triangulated mesh. The [Create TIN](https://doc.esri.com/en/arcgis-pro/latest/tool-reference/3d-analyst/create-tin.html?tabs=dialog) tool generates a TIN from point data that includes a Z, or height field. Set the Output TIN to a folder location and file name without specifying a file extension. Set the coordinate system based on the input point data. Choose the Input Features as point or line data, and set the Height Field to match the appropriate field that contains the Z or elevation values. After running the tool, the file is not automatically add to the map. Add the data manually through the Add Data button or the Catalog.
+
 ## Interpolation
 
 The interpolation tools, in contrast to the density tools, should be used on continuous data, where values are sampled at specified points. Interpolation assumes that values will be most similar to the closest values and more different from the farthest values. In other words, in contrast to the density tools, the interpolation tools assume that the value of sample data in one place will influence the values of nearby points. The interpolation tools also differ from the density tools in that a Z value field is required, which in terrain analysis represents the elevation of point data. Several interpolation approaches are available in ArcGIS Pro under the Interpolation tools in the Geoprocessing toolbox.
@@ -33,7 +37,7 @@ The interpolation tools, in contrast to the density tools, should be used on con
 :align: center
 ```
 
-The [IDW tool](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/spatial-analyst/idw.htm) in ArcGIS Pro conducts an interpolation based on Inverse Distance Weighting. The Power parameter will determine how strongly nearby points affect the interpolated value. Higher powers will assign less influence from more distance points. 
+The [IDW tool](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/spatial-analyst/idw.htm) in ArcGIS Pro conducts an interpolation based on Inverse Distance Weighting. Load the point data through the Input point features and set the Z value field to match the field that contains elevation. The Power parameter will determine how strongly nearby points affect the interpolated value. Higher powers will assign less influence from more distance points. 
 
 ```{note}
 This method is also available in QGIS using the IDW interpolation tool under Interpolation.
@@ -57,7 +61,7 @@ The [Spline tool](https://pro.arcgis.com/en/pro-app/3.3/tool-reference/spatial-a
 In QGIS, Multilevel B-Spline and Thin Plate Spline are available under SAGA Next Gen.
 ```
 
-Note that edge effects can be removed from any of these approaches by using the [Clip Raster tool](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/data-management/clip.htm) on the output raster with an input polygon. 
+Note that edge effects can be removed from any of these approaches by using the [Clip Raster tool](https://pro.arcgis.com/en/pro-app/3.4/tool-reference/data-management/clip.htm) on the output raster with an input polygon. The input polygon can be generated using the convex hull option in the [Minimum Bounding Geometry tool](https://doc.esri.com/en/arcgis-pro/latest/tool-reference/data-management/minimum-bounding-geometry.html?tabs=dialog).
 
 ```{note}
 In QGIS, use Clip raster by mask layer under GDAL or Clip Raster with Polygon under SAGA.
