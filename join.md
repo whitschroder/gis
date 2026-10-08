@@ -17,7 +17,7 @@ Cardinality refers to number of related records from one table to the next. In a
 :align: center
 ```
 <br>
-Source: <https://www.analyticsvidhya.com/blog/2015/01/introduction-merging-sas/>  
+Source: [Analytics Vidhya](https://www.analyticsvidhya.com/blog/2015/01/introduction-merging-sas)  
 
 To run the Add Relate tool, the two tables must share a column with values of the same data type. These columns are defined under Input Relate Field and Output Relate Field.
 
